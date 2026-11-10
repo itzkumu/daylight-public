@@ -1,0 +1,91 @@
+/* Lighten supporting text and green-tinted surfaces while retaining the dark UI. */
+:root {
+  --forge-surface: #202a31;
+  --forge-surface-high: #2c3941;
+  --forge-line: #41545e;
+  --forge-muted: #d2dfe3;
+  --forge-dim: #b8cbd1;
+  --forge-lime-soft: #314934;
+}
+
+.brand-logo {
+  background: transparent url('/daylight-mark.svg') center / 72px auto no-repeat;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 4px 8px #0008);
+}
+.brand-copy strong { font-size: 15.5px; letter-spacing: -.055em; }
+.brand-copy small { color: #b7d2d6; font-size: 9px; }
+.side-label, .avatar-row small { color: var(--forge-dim); }
+.nav-item { color: #c9d8dd; }
+.nav-item:hover { background: #2b373e; }
+.sidebar-tip { background: linear-gradient(145deg,#253b39,#202e34); border-color: #4e6970; }
+.sidebar-tip span { color: #c3d7da; }
+.avatar-row { color: var(--forge-muted); }
+
+.breadcrumb { color: #c6d7dd; }
+.breadcrumb span { color: #a9bdc4; }
+.today-pill {
+  min-height: 42px;
+  padding: 0 13px;
+  gap: 10px;
+  border: 1px solid #55707b;
+  border-radius: 11px;
+  background: #283740;
+  color: #f1f7f8;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.today-pill svg { color: #81dcd4; flex: none; }
+.date-short { display: none; }
+.top-actions { gap: 13px; }
+
+.dashboard-heading p, .page-heading p, .projects-intro p, .card p, .card small, .muted, .fine-print,
+.social-heading p, .social-card-copy p, .content-caption, .assistant-chat-head p,
+.assistant-context p, .assistant-setup p, .bill-details small, .bills-heading p,
+.project-card-summary, .project-empty p { color: var(--forge-muted); }
+.quiet-label, .balance-label, .stat-card span, .task-meta, .post-preview small,
+.content-row small, .ledger-entry-main span, .ledger-group-heading span,
+.ledger-scroll-hint, .spending-donut-center span { color: var(--forge-dim); }
+.task-done .task-main strong { color: #adbec4; }
+.money-stat-grid .stat-card { background: linear-gradient(125deg,#26343a,#212b32 76%); }
+.ledger-group, .project-empty, .project-loading { background: #202b32; }
+.count-badge, .status-chip, .connection-status.ready { background: #345047; color: #b3f1d8; }
+.callout-line, .analytics-notice, .agent-key-reveal { background: #30434c; border-color: #57717b; color: #e3f0f2; }
+.analytics-tabs button.selected { background: #33515b; color: #b9f3ed; }
+.social-message { background: #304852; color: #edf6f7; }
+.assistant-message.user { background: #315751; }
+.segmented button { color: #d0dfe2; }
+.modal input::placeholder, .modal textarea::placeholder, .project-modal input::placeholder,
+.project-modal textarea::placeholder, .assistant-compose textarea::placeholder { color: #acbdc5; }
+
+.notification-popover, .notification-header { background: #222d34; border-color: #4a5e68; }
+.notification-item strong, .notification-clear strong { color: #f0f6f7; }
+.notification-item small, .notification-more, .notification-clear p { color: #c8d8dd; }
+.notification-item:hover { background: #31434b; }
+.notification-clear { color: #97e1ce; }
+.notification-header h2 span { background: #334e5b; color: #cfebf5; }
+
+.ov-stat { background: #222d34; }
+.ov-card { background: #222d34; border-color: #42545e; }
+.ov-stat-label, .ov-card .section-kicker { color: #c2d6dd; }
+.ov-stat small, .ov-muted, .ov-empty span, .ov-row small,
+.ov-project-item small, .ov-project-item em, .ov-card-foot,
+.ov-money-numbers span, .ov-content-summary small, .ov-audience-channel small,
+.ov-donut span { color: #c1d2d8; }
+.ov-project-item, .ov-audience-channel { background: #293842; border-color: #4c646f; }
+.ov-money-numbers > div, .ov-row, .ov-card-foot { border-color: #455a64; }
+.ov-icon-money { background: #34524e; color: #a7f0df; }
+.ov-icon-attention, .ov-row-task { background: #4b3932; color: #ffc6a3; }
+
+@media (max-width: 650px) {
+  .brand-copy strong { font-size: 15px; }
+  .today-pill { display: inline-flex; min-height: 36px; padding: 0 9px; gap: 6px; font-size: 13px; }
+  .today-pill svg { width: 15px; height: 15px; }
+  .date-long { display: none; }
+  .date-short { display: inline; }
+  .top-actions { gap: 9px; }
+  .topbar { padding: 0 14px; }
+}

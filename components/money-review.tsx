@@ -1,0 +1,13 @@
+"use client";
+
+import { AlertCircle, CheckCircle2, ClipboardCheck, Pencil } from "lucide-react";
+import type { Bill, Project, Transaction } from "../lib/firebase-data";
+import { reviewMoneyMonth } from "../lib/money-review";
+
+export default function MoneyReview({ transactions, bills, projects, month, formatMoney, onEdit }: { transactions: Transaction[]; bills: Bill[]; projects: Project[]; month: string; formatMoney: (cents: number) => string; onEdit: (entry: Transaction) => void }) {
+  const review = reviewMoneyMonth(transactions, bills, projects, month);
+  return <details className="money-review card" open={review.issues.length > 0}>
+    <summary><span className="money-review-icon"><ClipboardCheck size={19}/></span><span><strong>Money check</strong><small>{review.issues.length ? `${review.issues.length} ${review.issues.length === 1 ? "item needs" : "items need"} review` : `${review.entryCount} entries · ${review.billCount} bills checked`}</small></span><span className={`money-review-status ${review.issues.length ? "attention" : "clear"}`}>{review.issues.length ? <AlertCircle size={16}/> : <CheckCircle2 size={16}/>} {review.issues.length ? "Review" : "No link issues"}</span></summary>
+    <div className="money-review-body"><p>Selected month totals, calculated from saved Money entries. Bill expenses and project costs are counted once, including when a bill belongs to a project.</p><div className="money-review-grid"><div><span>Other income</span><strong>{formatMoney(review.income - review.projectIncome)}</strong></div><div><span>Project payments</span><strong>{formatMoney(review.projectIncome)}</strong></div><div><span>Expenses with bills</span><strong>{formatMoney(review.billExpenses)}</strong></div><div><span>Other expenses</span><strong>{formatMoney(review.expenses - review.billExpenses)}</strong></div><div><span>Of spending: project costs</span><strong>{formatMoney(review.projectExpenses)}</strong></div><div><span>Income less spending</span><strong>{formatMoney(review.balance)}</strong></div></div>{review.issues.length ? <div className="money-review-issues">{review.issues.map(issue => <div key={issue.id}><AlertCircle size={16}/><div><strong>{issue.title}</strong><p>{issue.detail}</p></div>{issue.transactionId && <button type="button" onClick={() => { const entry = transactions.find(item => item.id === issue.transactionId); if (entry) onEdit(entry); }}><Pencil size={13}/> Edit</button>}</div>)}</div> : <p className="money-review-clear">No linked bill discrepancies or invalid amounts found in this month. Compare receipt images with their entered values before relying on them.</p>}</div>
+  </details>;
+}
