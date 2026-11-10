@@ -1,4 +1,4 @@
-# Daylight
+# Daylight by Airly Forge Studio
 
 A personal workspace for projects, tasks, income and expenses, and content plans.
 
