@@ -4,6 +4,34 @@ A personal workspace for projects, tasks, income and expenses, and content plans
 
 Built with Next.js, React, TypeScript, Firebase Authentication, and Cloud Firestore. Run your own copy with your own Firebase project.
 
+## Dashboard preview
+
+These illustrative screenshots use fictional sample projects, tasks, events, and money entries so you can see what a populated workspace looks like. They are visual examples; connecting Google and social accounts requires the optional setup below.
+
+### Overview
+
+![Daylight overview with projects, upcoming tasks, spending, and content plans](./docs/screenshots/01-overview.png)
+
+### Projects
+
+![Projects dashboard with sample client work and budgets](./docs/screenshots/02-projects.png)
+
+### Tasks
+
+![Tasks dashboard with sample deadlines and reminders](./docs/screenshots/03-tasks.png)
+
+### Lectures & Meetings
+
+![Lectures and Meetings dashboard with sample calendar events](./docs/screenshots/04-lectures-meetings.png)
+
+### Money
+
+![Money dashboard with sample income, expenses, and spending categories](./docs/screenshots/05-money.png)
+
+### Connections
+
+![Connections dashboard illustrating optional account integrations](./docs/screenshots/06-connections.png)
+
 ## Start here
 
 The basic workspace needs **Node.js 22.13 or newer** and a **Firebase project**. Google Drive, Calendar, social analytics, AI chat, and Hermes are optional.
