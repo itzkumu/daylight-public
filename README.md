@@ -11,9 +11,9 @@ The basic workspace needs **Node.js 22.13 or newer** and a **Firebase project**.
 ### 1. Set up Firebase once
 
 1. Create a project in the [Firebase console](https://console.firebase.google.com/) and register a Web app.
-2. Enable **Authentication  Sign-in method  Google**. Add `localhost` under **Authentication  Settings  Authorized domains**.
+2. Enable **Authentication → Sign-in method → Google**. Add `localhost` under **Authentication → Settings → Authorized domains**.
 3. Create a **Cloud Firestore** database. Publish the contents of [firestore.rules](./firestore.rules) in its Rules tab.
-4. Open **Project settings  Your apps** and keep the Firebase Web configuration handy.
+4. Open **Project settings → Your apps** and keep the Firebase Web configuration handy.
 
 Use your own project and credentials. You do not need the maintainer's accounts.
 
